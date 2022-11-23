@@ -2,6 +2,8 @@ import random
 import rima_data
 from rima_data import Bloque_rima
 
+PROB_MISMA_RIMA = 6
+
 rimada = rima_data
 
         
@@ -50,28 +52,32 @@ def seleccion_palabras(nivel):
 
     # RESTRICCIONES NIVEL 1: palabras de la misma categoría: a-g-e
     if nivel == 1:
-        while not (palabra_1.categoria == palabra_2.categoria and palabra_1.palabra != palabra_2.palabra):
+        while not (palabra_1.categoria == palabra_2.categoria and
+                palabra_1.palabra != palabra_2.palabra and 
+                (palabra_1.rima != palabra_2.rima or 1 != random.randint(1, PROB_MISMA_RIMA))):
             palabra_1 = Bloque_rima(random.choice(rimada.lista))
             palabra_2 = Bloque_rima(random.choice(rimada.lista))
         return palabra_1, palabra_2        
 
     # RESTRICCIONES NIVEL 2: palabras de la misma categoría o g + a
     if nivel == 2:
-        while not (palabra_1.categoria == palabra_2.categoria or 
+        while not ((palabra_1.categoria == palabra_2.categoria or 
                 (palabra_1.categoria == "a" and palabra_2.categoria == "g") 
-                or (palabra_1.categoria == "g" and palabra_2.categoria == "a")
-                and palabra_1.palabra != palabra_2.palabra):
+                or (palabra_1.categoria == "g" and palabra_2.categoria == "a"))
+                and palabra_1.palabra != palabra_2.palabra and 
+                (palabra_1.rima != palabra_2.rima or 1 != random.randint(1, PROB_MISMA_RIMA))):
             palabra_1 = Bloque_rima(random.choice(rimada.lista))
             palabra_2 = Bloque_rima(random.choice(rimada.lista))
         return palabra_1, palabra_2
     # RESTRICCIONES NIVEL 3: palabras de la misma categoría, / a + g / g + e
     if nivel == 3:
-        while not (palabra_1.categoria == palabra_2.categoria or 
+        while not ((palabra_1.categoria == palabra_2.categoria or 
                 (palabra_1.categoria == "a" and palabra_2.categoria == "g") 
                 or (palabra_1.categoria == "g" and palabra_2.categoria == "a")
                 or (palabra_1.categoria == "g" and palabra_2.categoria == "e") 
-                or (palabra_1.categoria == "g" and palabra_2.categoria == "e")
-                and palabra_1.palabra != palabra_2.palabra):
+                or (palabra_1.categoria == "g" and palabra_2.categoria == "e"))
+                and palabra_1.palabra != palabra_2.palabra and 
+                (palabra_1.rima != palabra_2.rima or 1 != random.randint(1, PROB_MISMA_RIMA))):
             palabra_1 = Bloque_rima(random.choice(rimada.lista))
             palabra_2 = Bloque_rima(random.choice(rimada.lista))
         return palabra_1, palabra_2
