@@ -1,4 +1,5 @@
 import rima_fn_3
+from rima_data import Bloque_rima
 rim = rima_fn_3
 
 def menu():

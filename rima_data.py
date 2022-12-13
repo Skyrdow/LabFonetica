@@ -24,7 +24,7 @@ class Bloque_rima:
 lista = (("casa", "g", "asa"), ("mesa", "g", "esa"), ("canción", "a", "on"), ("lector", "a", "or"),
          ("pasa", "g", "asa"), ("lámpara", "e", "ampara"), ("trágico", "e", "axiko"),
          ("queso", "g", "eso"), ("beso", "g", "eso"), ("pesa", "g", "esa"),
-         ("fiesta", "g", "esta"), ("mesa", "g", "esa"), ("finca", "g", "inka"),
+         ("fiesta", "g", "esta"), ("finca", "g", "inka"),
          ("prístino", "e", "istino"), ("fin", "a", "in"), ("lindo", "g", "indo"),
          ("horno", "g", "orno"), ("bochorno", "g", "orno"), ("lóbrego", "e", "obrego"),
          ("mosco", "g", "osko"), ("fútbol", "g", "utbol"), ("buque", "g", "uke"),

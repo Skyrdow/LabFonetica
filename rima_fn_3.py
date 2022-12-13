@@ -133,6 +133,8 @@ def revisar_base_datos_nr():
                 opcion = "rima consonante"
             if respuesta == 3:
                 opcion = "rima asonante"
+            if respuesta == 4:
+                opcion = "error logica"
             print(rima_1.palabra, rima_2.palabra, "|||", end=" ")
             print(opcion)
             
@@ -148,11 +150,22 @@ def revisar_base_datos():
                 opcion = "rima consonante"
             if respuesta == 3:
                 opcion = "rima asonante"
+            if respuesta == 4:
+                opcion = "error logica"
             print(rima_1.palabra, rima_2.palabra, "|||", end=" ")
-            print(opcion, "|||", rima_1.categoria, "/", rima_2.categoria)
+            print(opcion)
+
+def debug_base_datos():
+    for bloq_rima_1 in rima_data.lista:
+        rima_1 = Bloque_rima(bloq_rima_1)
+        for bloq_rima_2 in rima_data.lista:
+            rima_2 = Bloque_rima(bloq_rima_2)
+            respuesta = identificador_de_rima(rima_1, rima_2)
+            if respuesta == 4:
+                print(rima_1.palabra, rima_2.palabra, "|||", end=" ")
+                print("datos: ", rima_1, "///", rima_2)
 
 def obtener_ultima_vocal(palabra):
-    print("uv:", palabra.rima[-1], "/")
     if palabra.rima[-1] in ('a', 'e', 'i', 'o', 'u'):
         return palabra.rima[-1]
     # Asumiendo que no existen palabras con dos consonantes al final
