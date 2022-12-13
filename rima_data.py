@@ -16,6 +16,9 @@ class Bloque_rima:
         self.rima = bloque_palabra[2]
         self.primera_letra_rima = bloque_palabra[2][0]
         self.resto_rima = bloque_palabra[2][1:]
+        
+    def __str__(self):
+        return self.palabra + " " + self.categoria + " " + self.rima + " " + self.primera_letra_rima + " " + self.resto_rima
 
 
 lista = (("casa", "g", "asa"), ("mesa", "g", "esa"), ("canción", "a", "on"), ("lector", "a", "or"),

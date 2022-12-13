@@ -6,8 +6,6 @@ PROBABILIDAD_MISMA_RIMA = 6
 
 rimada = rima_data
 
-        
-
 """Necesito ciertas restricciones que no sé implementar:
     En el nivel básico, las dos palabras tienen que ser de la misma categoría "a", "g" o "e"
     En el nivel medio las dos palabras pueden ser 
@@ -91,28 +89,38 @@ def compararCategorias(palabra1, palabra2, cat1, cat2):
 ### 2 = hay rima consonante
 ### 3 = hay rima asonante
 def identificador_de_rima(palabra_1, palabra_2):
+    if (compararCategorias(palabra_1, palabra_2, "a", "e")):
+        return 1
+
+    if (compararCategorias(palabra_1, palabra_2, "a", "g")):
+        return 1
 
     if palabra_1.primera_letra_rima != palabra_2.primera_letra_rima:
         return 1
 
-    if (compararCategorias(palabra_1, palabra_2, "a", "e")):
-        return 1
-
-    if (palabra_1.primera_letra_rima == palabra_2.primera_letra_rima) and (palabra_1.rima == palabra_2.rima):
-        return 2
-
-    if (compararCategorias(palabra_1, palabra_2, "a", "a") or compararCategorias(palabra_1, palabra_2, "a", "g")):
-        return 3
-
-    if (compararCategorias(palabra_1, palabra_2, "e", "e") or compararCategorias(palabra_1, palabra_2, "e", "g")):
-        ultimo_elemento_p_1 = palabra_1.rima[-1]
-        ultimo_elemento_p_2 = palabra_2.rima[-1]
-        if ultimo_elemento_p_1 == ultimo_elemento_p_2:
+    if (palabra_1.primera_letra_rima == palabra_2.primera_letra_rima): 
+        if (palabra_1.rima == palabra_2.rima):
             return 2
 
-    return 1
+        # Rima 1 y 2 no coinciden
+        if (palabra_1.rima != palabra_2.rima):
 
-def revisar_base_datos():
+            # Se identifican las dos ultimas vocales
+            if (compararCategorias(palabra_1, palabra_2, "e", "e")):
+                if (obtener_ultima_vocal(palabra_1) == obtener_ultima_vocal(palabra_2)):
+                    return 3
+                else:
+                    return 1
+
+            if (compararCategorias(palabra_1, palabra_2, "e", "g")):
+                if (obtener_ultima_vocal(palabra_1) == obtener_ultima_vocal(palabra_2)):
+                    return 3
+                else:
+                    return 1
+    # Valor 4 = algo malo ocurrió
+    return 4
+
+def revisar_base_datos_nr():
     print("## Se omiten los resultados de \"no hay rima\" ##")
     for bloq_rima_1 in rima_data.lista:
         rima_1 = Bloque_rima(bloq_rima_1)
@@ -127,3 +135,27 @@ def revisar_base_datos():
                 opcion = "rima asonante"
             print(rima_1.palabra, rima_2.palabra, "|||", end=" ")
             print(opcion)
+            
+def revisar_base_datos():
+    for bloq_rima_1 in rima_data.lista:
+        rima_1 = Bloque_rima(bloq_rima_1)
+        for bloq_rima_2 in rima_data.lista:
+            rima_2 = Bloque_rima(bloq_rima_2)
+            respuesta = identificador_de_rima(rima_1, rima_2)
+            if respuesta == 1:
+                opcion = "no hay rima"
+            if respuesta == 2:
+                opcion = "rima consonante"
+            if respuesta == 3:
+                opcion = "rima asonante"
+            print(rima_1.palabra, rima_2.palabra, "|||", end=" ")
+            print(opcion, "|||", rima_1.categoria, "/", rima_2.categoria)
+
+def obtener_ultima_vocal(palabra):
+    print("uv:", palabra.rima[-1], "/")
+    if palabra.rima[-1] in ('a', 'e', 'i', 'o', 'u'):
+        return palabra.rima[-1]
+    # Asumiendo que no existen palabras con dos consonantes al final
+    if len(palabra.rima) > 1:
+        return palabra.rima[-2]
+    return "ERROR"

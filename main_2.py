@@ -1,7 +1,7 @@
 import rima_fn_3
 rim = rima_fn_3
 
-def asd():
+def menu():
     nivel, ene_veces = rim.eleccionNivel()
     print("Su nivel es...")
     print(nivel)
