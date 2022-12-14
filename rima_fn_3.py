@@ -104,16 +104,26 @@ def identificador_de_rima(palabra_1, palabra_2):
 
         # Rima 1 y 2 no coinciden
         if (palabra_1.rima != palabra_2.rima):
+            if (compararCategorias(palabra_1, palabra_2, "a", "a")):
+                return 3
 
+            rima_simpl_1 = simpl_diptongos(palabra_1)
+            rima_simpl_2 = simpl_diptongos(palabra_2)
             # Se identifican las dos ultimas vocales
             if (compararCategorias(palabra_1, palabra_2, "e", "e")):
-                if (obtener_ultima_vocal(palabra_1) == obtener_ultima_vocal(palabra_2)):
+                vocales_1 = obtener_ultimas_2_vocales(rima_simpl_1)
+                vocales_2 = obtener_ultimas_2_vocales(rima_simpl_2)
+                if (vocales_1[0] == "" or vocales_2[0] == "" or 
+                    vocales_1[1] == "" or vocales_2[1] == ""):
+                    return 1
+
+                if (vocales_1[0] == vocales_2[0] and vocales_1[1] == vocales_2[1]):
                     return 3
                 else:
                     return 1
 
-            if (compararCategorias(palabra_1, palabra_2, "e", "g")):
-                if (obtener_ultima_vocal(palabra_1) == obtener_ultima_vocal(palabra_2)):
+            if (compararCategorias(palabra_1, palabra_2, "e", "g") or compararCategorias(palabra_1, palabra_2, "g", "g")):
+                if (obtener_ultima_vocal(rima_simpl_1) == obtener_ultima_vocal(rima_simpl_2)):
                     return 3
                 else:
                     return 1
@@ -165,10 +175,34 @@ def debug_base_datos():
                 print(rima_1.palabra, rima_2.palabra, "|||", end=" ")
                 print("datos: ", rima_1, "///", rima_2)
 
-def obtener_ultima_vocal(palabra):
-    if palabra.rima[-1] in ('a', 'e', 'i', 'o', 'u'):
-        return palabra.rima[-1]
+def obtener_ultima_vocal(string):
+    if string[-1] in ('a', 'e', 'i', 'o', 'u'):
+        return string[-1]
     # Asumiendo que no existen palabras con dos consonantes al final
-    if len(palabra.rima) > 1:
-        return palabra.rima[-2]
+    if len(string) > 1:
+        return string[-2]
     return "ERROR"
+
+def obtener_ultimas_2_vocales(string):
+    vocal_1 = ""
+    vocal_2 = ""
+    # "ABC" -> "CBA"
+    reversed_string = string[::-1]
+    primero_encontrado = False
+    for char in reversed_string:
+        if char in ('a', 'e', 'i', 'o', 'u'):
+            if (not primero_encontrado):
+                vocal_1 = char
+                primero_encontrado = True
+            else:
+                vocal_2 = char
+                return [vocal_1, vocal_2]
+
+
+def simpl_diptongos(palabra):
+    resto_rima = palabra.resto_rima
+    for elem in ("ai", "au","ua","ia","ei","eu","ue","ie","oi","ou","io","uo","iu","iu","ui"):
+        for elem2 in ("a","a","a","a","e","e","e","e","o","o","o","o","i","u","u"):
+            resto_rima = resto_rima.replace(elem, elem2)
+            break
+    return resto_rima
