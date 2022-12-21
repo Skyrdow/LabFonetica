@@ -8,19 +8,7 @@ import java.util.Scanner;
 
 public class Rima_fn_3 {
     final int PROBABILIDAD_MISMA_RIMA = 6;
-    
-    final List<List<String>> lista = Arrays.asList(Arrays.asList("casa", "g", "asa"), Arrays.asList("mesa", "g", "esa"), Arrays.asList("canción", "a", "on"), Arrays.asList("lector", "a", "or"),
-         Arrays.asList("pasa", "g", "asa"), Arrays.asList("lámpara", "e", "ampara"), Arrays.asList("trágico", "e", "axiko"),
-         Arrays.asList("queso", "g", "eso"), Arrays.asList("beso", "g", "eso"), Arrays.asList("pesa", "g", "esa"),
-         Arrays.asList("fiesta", "g", "esta"), Arrays.asList("finca", "g", "inka"),
-         Arrays.asList("prístino", "e", "istino"), Arrays.asList("fin", "a", "in"), Arrays.asList("lindo", "g", "indo"),
-         Arrays.asList("horno", "g", "orno"), Arrays.asList("bochorno", "g", "orno"), Arrays.asList("lóbrego", "e", "obrego"),
-         Arrays.asList("mosco", "g", "osko"), Arrays.asList("fútbol", "g", "utbol"), Arrays.asList("buque", "g", "uke"),
-         Arrays.asList("luma", "g", "uma"), Arrays.asList("bruma", "g", "uma"), Arrays.asList("puma", "g", "uma"),
-         Arrays.asList("camélido", "e", "elido"), Arrays.asList("fétido", "e", "etido"), Arrays.asList("lúcido", "e", "usido"),
-         Arrays.asList("bote", "g", "ote"), Arrays.asList("pote", "g", "ote"), Arrays.asList("cantar", "a", "ar"), Arrays.asList("espuma", "g", "uma"));
-    
-    
+        
     public int[] eleccionNivel() {
         Integer ene_veces;
         int nivel;
