@@ -1,6 +1,7 @@
 ---
 import Boton from "../components/Boton";
 import Carta from "../components/Carta";
+import Header from "../components/Header";
 ---
 
 <head>
@@ -9,25 +10,22 @@ import Carta from "../components/Carta";
     <title>Lab. Fonética</title>
 </head>
 
-<body>
-    <header class="bg-usach-industrial-100 p-3 flex">
-        <img src="/Usach S1.png" alt="Logo Usach" class="h-40 pb-5">
-        <h1 class="mx-80 my-10 text-6xl font-mono" >Laboratorio de fonética</h1>
-    </header>
+<body class="flex flex-col min-h-screen">
+    <Header/>
     
-    <main class="bg-usach-aqua-1000 pb-20">
-        <div class="grid2x1 gap-10 p-10 h-3/4">
+    <main class="bg-usach-aqua-1000">
+        <div class="grid grid-cols-3 gap-10 p-10 h-3/4">
             <div class="backbox inline-grid text-5xl px-32 py-20 gap-16">
                 <Boton label="Iniciar sesión" href="/login" />
                 <Boton label="Registrarse" href="/register" />
                 <Boton label="Invitado" href="/home" />
             </div>
     
-            <div class="backbox leaderboard_grid">
+            <div class="backbox leaderboard_grid col-span-2">
                 <h2 class="text-center text-5xl pt-10">
                     Leaderboard
                 </h2>
-                <div class="grid3x1 gap-6 text-3xl p-10 text-center">
+                <div class="grid grid-cols-3 gap-8 text-3xl p-10 text-center justify-center">
                     <Carta title="Píndaro" />
                     <Carta title="Rima" />
                     <Carta title="Cat. Acentual" />
@@ -36,7 +34,7 @@ import Carta from "../components/Carta";
         </div>
     </main>
     
-    <footer class="bg-usach-aqua-900">
+    <footer class="bg-usach-aqua-900 h-full">
         ACA VA EL FOOTER
     </footer>
 </body>
