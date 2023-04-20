@@ -1,40 +1,30 @@
 ---
 import Boton from "../components/Boton";
 import Carta from "../components/Carta";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Layout from "../layouts/Layout.astro";
 ---
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lab. Fonética</title>
-  </head>
-  
-  <body class="min-h-screen flex flex-col justify-between">
-    <Header />
-    <main class="bg-usach-aqua-1000 pb-20">
-      <section class="grid xl:grid-cols-3 gap-10 p-10">
+<Layout title="Lab. Fonetica">
+  <main class="bg-usach-aqua-1000 pb-20">
+    <section class="grid xl:grid-cols-3 gap-10 p-10">
+      <div
+        class="flex flex-col text-5xl px-16 py-20 gap-16 bg-usach-industrial-100 rounded-md [&>button]:"
+      >
+        <Boton label="Iniciar sesión" href="/login" />
+        <Boton label="Registrarse" href="/register" />
+        <Boton label="Invitado" href="/home" />
+      </div>
+      <div
+        class="md:col-span-2 bg-usach-industrial-100 rounded-md min-h-[20rem]"
+      >
+        <h2 class="text-center text-5xl pt-10">Leaderboard</h2>
         <div
-          class="flex flex-col text-5xl px-16 py-20 gap-16 bg-usach-industrial-100 rounded-md [&>button]:"
+          class="grid md:grid-cols-3 gap-6 text-3xl p-10 text-center h-[80%]"
         >
-          <Boton label="Iniciar sesión" href="/login" />
-          <Boton label="Registrarse" href="/register" />
-          <Boton label="Invitado" href="/home" />
+          <Carta title="Píndaro" />
+          <Carta title="Rima" />
+          <Carta title="Cat. Acentual" />
         </div>
-        <div
-          class="md:col-span-2 bg-usach-industrial-100 rounded-md min-h-[20rem]"
-        >
-          <h2 class="text-center text-5xl pt-10">Leaderboard</h2>
-          <div
-            class="grid md:grid-cols-3 gap-6 text-3xl p-10 text-center h-[80%]"
-          >
-            <Carta title="Píndaro" />
-            <Carta title="Rima" />
-            <Carta title="Cat. Acentual" />
-          </div>
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </body>
+      </div>
+    </section>
+  </main>
+</Layout>
