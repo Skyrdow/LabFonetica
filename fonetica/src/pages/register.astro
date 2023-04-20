@@ -1,0 +1,38 @@
+---
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Input from "../components/Input";
+import Boton from "../components/Boton";
+---
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab. Fonética</title>
+</head>
+  
+<body class="min-h-screen flex flex-col justify-between">
+  <Header />
+  <main class="bg-usach-aqua-1000 pb-20 flex p-20 justify-center">
+    <form class="flex flex-col text-5xl p-10 bg-usach-industrial-100 rounded-md w-4/12 justify-center">
+      
+      <Input Label="Usuario" forLabel="user" type="text" placeholder="misterPindaro3000"/>
+      
+      <Input Label="Correo" forLabel="email" type="text" placeholder="pindaro@usach.cl"/>
+      
+      <Input Label="Contraseña" forLabel="password" type="password" placeholder="•••••••••"/>
+      
+      <Input Label="Confirme Contraseña" forLabel="confirm_password" type="password" placeholder="•••••••••"/>
+      
+      <div class="flex justify-center">
+        <button type="submit" class="text-white bg-usach-daisy-800 hover:bg-usach-daisy-900 
+              focus:ring-4 focus:outline-none font-medium rounded-lg text-sm 
+              sm:w-auto py-2.5 px-3.5 text-center">
+          Registrarse
+        </button>
+      </div>
+
+    </form>
+  </main>
+  <Footer />
+</body>
