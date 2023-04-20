@@ -2,69 +2,39 @@
 import Boton from "../components/Boton";
 import Carta from "../components/Carta";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 ---
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lab. Fonética</title>
-</head>
-
-<body class="flex flex-col min-h-screen">
-    <Header/>
-    
-    <main class="bg-usach-aqua-1000">
-        <div class="grid grid-cols-3 gap-10 p-10 h-3/4">
-            <div class="backbox inline-grid text-5xl px-32 py-20 gap-16">
-                <Boton label="Iniciar sesión" href="/login" />
-                <Boton label="Registrarse" href="/register" />
-                <Boton label="Invitado" href="/home" />
-            </div>
-    
-            <div class="backbox leaderboard_grid col-span-2">
-                <h2 class="text-center text-5xl pt-10">
-                    Leaderboard
-                </h2>
-                <div class="grid grid-cols-3 gap-8 text-3xl p-10 text-center justify-center">
-                    <Carta title="Píndaro" />
-                    <Carta title="Rima" />
-                    <Carta title="Cat. Acentual" />
-                </div>
-            </div>
+  </head>
+  
+  <body class="min-h-screen flex flex-col justify-between">
+    <Header />
+    <main class="bg-usach-aqua-1000 pb-20">
+      <section class="grid xl:grid-cols-3 gap-10 p-10">
+        <div
+          class="flex flex-col text-5xl px-16 py-20 gap-16 bg-usach-industrial-100 rounded-md [&>button]:"
+        >
+          <Boton label="Iniciar sesión" href="/login" />
+          <Boton label="Registrarse" href="/register" />
+          <Boton label="Invitado" href="/home" />
         </div>
+        <div
+          class="md:col-span-2 bg-usach-industrial-100 rounded-md min-h-[20rem]"
+        >
+          <h2 class="text-center text-5xl pt-10">Leaderboard</h2>
+          <div
+            class="grid md:grid-cols-3 gap-6 text-3xl p-10 text-center h-[80%]"
+          >
+            <Carta title="Píndaro" />
+            <Carta title="Rima" />
+            <Carta title="Cat. Acentual" />
+          </div>
+        </div>
+      </section>
     </main>
-    
-    <footer class="bg-usach-aqua-900 h-full">
-        ACA VA EL FOOTER
-    </footer>
-</body>
-
-<style>
-    .grid2x1 {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr;
-        }
-    .leaderboard_grid {        
-        display: grid;
-        grid-template-rows: 1fr 5fr;
-        grid-template-columns: 1fr;
-    }
-    .grid3x1 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        }
-    .yellowbox {
-        /* bg-usach-daisy-900 rounded-3xl*/
-        --tw-bg-opacity: 1;
-        background-color: rgb(236 178 26 / var(--tw-bg-opacity));
-        border-radius: 0.5rem
-    }
-    .backbox {
-        /* bg-usach-daisy-900 rounded-3xl*/
-        --tw-bg-opacity: 1;
-        background-color: rgb(229 243 243 / var(--tw-bg-opacity));
-        border-radius: 0.5rem
-    }
-</style>
+    <Footer />
+  </body>
