@@ -1,7 +1,22 @@
 ---
+import Boton from "../components/Boton";
+import Carta from "../components/Carta";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Lab.Fonetica">
-  <h1 >Home</h1>
+  <div class="flex flex-row align-middle">
+    <div
+        class="flex flex-col h-60 overflow-y-auto text-5xl px-16 py-10 text-white text-center bg-usach-industrial-100 bg-gradient-to-t from-usach-ultra-1000 to-usach-rouge-1000 rounded-lg [&>button]:"
+      >
+        <Boton label="Píndaro" href="/login" />
+        <Boton label="Cat. Acentual" href="/register" />
+        <Boton label="Rimas" href="/home" />
+        <Boton label="Otro 1" href="/home" />
+        <Boton label="Otro 2" href="/home" />
+    </div>
+    <h1 class="m-auto px-20 text-3xl text-white">
+      ¿Qué quieres jugar?
+    </h1>
+  </div>
 </Layout>
