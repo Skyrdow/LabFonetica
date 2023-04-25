@@ -6,7 +6,7 @@ export default function Header() {
                     <img src="/Usach SB.png" alt="Logo Usach" className=""/>
                 </a>
             </button>
-            <h1 className="m-auto text-3xl font-mono text-white align-middle">Recursos Virtuales para el aprendizaje del Lenguaje</h1>
+            <h1 className="m-auto text-5xl font-usach-tile text-white align-middle">Recursos Virtuales para el aprendizaje del Lenguaje</h1>
         </header>
     )
 }

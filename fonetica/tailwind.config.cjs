@@ -88,6 +88,10 @@ module.exports = {
 					900: '#CE2943',
 					1000: '#C8102E'
 				}
+			},
+			fontFamily: {
+				'usach-title': ['BebasNeuePro Bold', 'sans-serif'],
+				'usach-body': ['BebasNeuePro Regular' , 'sans-serif'],
 			}
 		},
 	},
