@@ -15,6 +15,7 @@ import Footer from '../components/Footer';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="https://www.fcm.usach.cl/sites/fcm/files/favicon_0.ico" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="/src/global.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -25,5 +26,6 @@ import Footer from '../components/Footer';
 			<slot/>
 		</main>
 		<Footer/>
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 	</body>
 </html>
