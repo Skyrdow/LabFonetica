@@ -4,17 +4,24 @@ import Carta from "../components/Carta";
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="Recursos Virtuales para el Lenguaje">
-    <div class="flex flex-auto px-56">
-        <div id="default-carousel" class="m-auto relative w-full" data-carousel="static">
+    <div class="flex flex-auto px-96">
+        <div id="default-carousel" class="m-auto relative w-full h-modal" data-carousel="static">
             <!-- Carousel wrapper -->
-            <div class="relative h-max overflow-hidden rounded-lg md:h-96">
+            <div class="relative overflow-hidden rounded-lg h-full">
                  <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out bg-usach-aqua-900" data-carousel-item>
-                    <div class="flex flex-col px-20 justify-center text-center text-white">
-                        <h1 class="py-6 text-3xl">PÍNDARO</h1>
-                        <div class="flex flex-col h-32"></div>
-                        <p>En este juego debes achuntarle a todos los objetivos que veas en la pantalla en el menor tiempo posible.</p>
-                        <Boton label="Jugar!" href="#" />
+                    <div class="flex-col px-20 justify-center text-center text-white">
+                        <h1 class="py-6 text-3xl font-usach-title">PÍNDARO</h1>
+                        <div class="flex flex-col h-64 mb-5">
+                            <img src="/public/ej1.png" class="m-auto w-full h-full object-contain"/>
+                        </div>
+                        <p class="my-2">En este juego debes achuntarle a todos los objetivos que veas en la pantalla en el menor tiempo posible.</p>
+                        <div class="my-6">
+                            <button class="rounded-lg bg-usach-rouge-800 h-full">
+                                <a class="text-5xl font-usach-title mx-7" href="#">JUGAR</a>
+                            </button>
+                        </div>
+                        
                         </div>
                 </div>
                 <!-- Item 2 -->
