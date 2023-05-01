@@ -96,7 +96,8 @@ module.exports = {
 				'usach-bebas-title': ['BebasNeuePro Bold', 'sans-serif'],
 				'usach-bebas-body': ['BebasNeuePro Regular' , 'sans-serif'],
 				'usach-helvetica-body': ['Helvetica Neue Regular' , 'sans-serif'],
-				'usach-helvetica-medium': ['Helvetica Neue Medium' , 'sans-serif']
+				'usach-helvetica-medium': ['Helvetica Neue Medium' , 'sans-serif'],
+				'usach-helvetica-bold': ['Helvetica Neue Bold' , 'sans-serif'],
 			}
 		},
 	},
