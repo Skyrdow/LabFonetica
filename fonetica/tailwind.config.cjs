@@ -93,8 +93,10 @@ module.exports = {
 				}
 			},
 			fontFamily: {
-				'usach-title': ['BebasNeuePro Bold', 'sans-serif'],
-				'usach-body': ['BebasNeuePro Regular' , 'sans-serif'],
+				'usach-bebas-title': ['BebasNeuePro Bold', 'sans-serif'],
+				'usach-bebas-body': ['BebasNeuePro Regular' , 'sans-serif'],
+				'usach-helvetica-body': ['Helvetica Neue Regular' , 'sans-serif'],
+				'usach-helvetica-medium': ['Helvetica Neue Medium' , 'sans-serif']
 			}
 		},
 	},

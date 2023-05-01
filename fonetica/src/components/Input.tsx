@@ -1,3 +1,5 @@
+import React from "react";
+
 interface Props {
     Label: string;
     forLabel: string;
@@ -7,9 +9,9 @@ interface Props {
 
 export default function Input({Label, forLabel, type, placeholder }: Props) {
     return(
-        <div className="flex flex-col mb-6 items-center">
+        <div className="flex flex-col mb-6 items-center font-usach-helvetica-body">
             <label htmlFor={forLabel} 
-                className="w-3/4 px-1 text-left mb-2 text-sm font-medium text-gray-900">
+                className="w-3/4 px-1 text-left mb-2 text-base font-medium text-white">
                 {Label}
             </label>
             <input type={type} id={forLabel} 

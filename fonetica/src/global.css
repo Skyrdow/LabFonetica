@@ -7,3 +7,13 @@
     font-family: 'BebasNeuePro Bold';
     src: url('../fonts/Bebas Neue Pro Bold.otf') format('opentype');
 }
+
+@font-face {
+    font-family: 'Helvetica Neue Regular';
+    src: url('../fonts/HelveticaNeueLTProLt.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url('../fonts/HelveticaNeueLTProCn.otf') format('opentype');
+}

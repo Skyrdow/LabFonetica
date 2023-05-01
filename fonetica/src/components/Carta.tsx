@@ -1,3 +1,5 @@
+import React from "react";
+
 interface Props {
     title: string;
     description?: string;
@@ -5,7 +7,7 @@ interface Props {
 
 export default function Carta({ title, description }: Props) {
     return (
-        <div className="rounded-lg bg-usach-terra-800 p-4 text-xl">
+        <div className=" font-usach-helvetica-body rounded-lg bg-usach-terra-800 p-4 text-lg">
             <h1>{title}</h1>
             <p>{description}</p>
         </div>
