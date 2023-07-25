@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Boton from "../components/Boton";
+---
+<Layout title="Recursos Virtuales para el Lenguaje">
+    <div class="flex flex-col text-5xl h-fit px-10 py-10 text-white text-center font-usach-helvetica-body bg-usach-aqua-800 rounded-lg">
+        <div>
+            <p>pregunta: 2?</p>
+            <Boton label="resp 1"></Boton>
+            <Boton label="resp 2"></Boton>
+            <Boton label="resp 3"></Boton>
+            <Boton label="resp 4"></Boton>
+        </div>
+        <button class="rounded-lg bg-usach-ultra-900 hover:bg-usach-ultra-1000 text-lg text-white my-2 drop-shadow p-2">
+            <a class="font-usach-helvetica-medium">botons</a>
+        </button>
+    </div>
+</Layout>
+
+<script>
+    // Definimos el valor a comparar dentro de la función.
+    const valueToCompare = 2;
+    var iterator = 1;
+    
+    const handleButtonClick = (value: number) => {
+        console.log(value);
+        console.log(valueToCompare);
+        if (value === valueToCompare) {
+            console.log('¡El valor coincide!');
+        }
+    };
+    const butons = document.querySelectorAll("#boton-pog");
+    console.log(butons);
+    butons.forEach((buton) => {
+        console.log(iterator);
+        const val = iterator;
+        buton.addEventListener('click', () => {
+            handleButtonClick(val);
+        });
+        iterator = iterator + 1;
+        
+    });
+    
+</script>

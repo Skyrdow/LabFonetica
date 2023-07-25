@@ -15,7 +15,7 @@ export default function Juego({ label, image }: Props) {
             <p className=" text-xl  font-usach-bebas-body my-2 ">En este juego debes contar la cantidad de sílabas que tiene cada palabra y seleccionar la respuesta correcta.</p>
             <div className="my-1">
                 <button className="rounded-lg bg-usach-rouge-800 hover:bg-usach-rouge-900 drop-shadow h-full">
-                    <a className="text-5xl font-usach-bebas-title mx-7" href="#">JUGAR</a>
+                    <a className="text-5xl font-usach-bebas-title mx-7" href="/pindaro">JUGAR</a>
                 </button>
             </div>
         </div>
